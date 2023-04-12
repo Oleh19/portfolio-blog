@@ -1,0 +1,6 @@
+- React
+- TypeScript
+- Redux-toolkit
+- RTK query
+- TailwindCSS
+- Swagger
