@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 
-const MyButtonFavorite: FC = () => {
+interface Props {
+  count: number;
+}
+
+const MyButtonFavorite: FC<Props> = ({ count }) => {
   return (
     <button
       className="text-blog-blue border-blog-blue border text-center
@@ -10,7 +14,7 @@ const MyButtonFavorite: FC = () => {
       duration-300 focus:bg-blog-darkBlue focus:text-white "
     >
       <AiOutlineHeart />
-      <span className="ml-1">70</span>
+      <span className="ml-1">{count}</span>
     </button>
   );
 };

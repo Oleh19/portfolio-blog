@@ -1,12 +1,17 @@
 import { FC } from 'react';
+import { FeedArticle } from '../api/dto/getGlobalFeed';
 import Article from './Article';
 
-const ArticleList: FC = () => {
+interface Props {
+  list: FeedArticle[];
+}
+
+const ArticleList: FC<Props> = ({ list }) => {
   return (
     <div className="w-3/4">
-      <Article />
-      <Article />
-      <Article />
+      {list.map((article) => (
+        <Article key={article.slug} {...article} />
+      ))}
     </div>
   );
 };
