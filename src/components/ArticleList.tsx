@@ -10,7 +10,10 @@ const ArticleList: FC<Props> = ({ list }) => {
   return (
     <div className="w-3/4">
       {list.map((article) => (
-        <Article key={article.slug} {...article} />
+        <Article
+          key={article.slug}
+          {...article}
+        />
       ))}
     </div>
   );
