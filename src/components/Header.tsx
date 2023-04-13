@@ -14,40 +14,40 @@ const Header: FC = () => {
     <header>
       <nav className="px-2 py-4">
         <Container>
-        <div className="flex justify-between items-center">
-          <Link
-            to="/"
-            className="mr-8 text-2xl text-blog-blue"
-          >
-            Blog
-          </Link>
-          <ul className="list-none flex">
-            <li className="ml-4">
-              <NavLink
-                to="/"
-                className={navLinkClasses}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="ml-4">
-              <NavLink
-                to="/sign-in"
-                className={navLinkClasses}
-              >
-                Sign In
-              </NavLink>
-            </li>
-            <li className="ml-4">
-              <NavLink
-                to="/sign-up"
-                className={navLinkClasses}
-              >
-                Sign Up
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+          <div className="flex justify-between items-center">
+            <Link
+              to="/"
+              className="mr-8 text-2xl text-blog-blue bg-none"
+            >
+              Blog
+            </Link>
+            <ul className="list-none flex">
+              <li className="ml-4">
+                <NavLink
+                  to="/"
+                  className={navLinkClasses}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="ml-4">
+                <NavLink
+                  to="/sign-in"
+                  className={navLinkClasses}
+                >
+                  Sign In
+                </NavLink>
+              </li>
+              <li className="ml-4">
+                <NavLink
+                  to="/sign-up"
+                  className={navLinkClasses}
+                >
+                  Sign Up
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </Container>
       </nav>
     </header>

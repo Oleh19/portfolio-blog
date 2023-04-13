@@ -1,14 +1,14 @@
 import { FC } from 'react';
 import Banner from './components/Banner';
+import Feed from './components/Feed';
 import Header from './components/Header';
 
-interface Props {}
-
-const App: FC<Props> = ({}) => {
+const App: FC = () => {
   return (
     <div>
       <Header />
       <Banner />
+      <Feed />
     </div>
   );
 };
