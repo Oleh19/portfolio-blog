@@ -37,7 +37,7 @@ const Article: FC<Props> = ({
               >
                 {author.username}
               </Link>
-              <span className="text-blog-lightGray text-base">
+              <span className="text-blog-gray text-base">
                 {/* {DateTime.fromISO(createdAt).toLocaleString(DateTime.DATE_FULL)} */}
                 {createdAt}
               </span>
@@ -50,10 +50,10 @@ const Article: FC<Props> = ({
           className="bg-none"
         >
           <h1 className="mb-1 font-semibold text-2xl">{title}</h1>
-          <p className="text-blog-lightGray font-light mb-1">{description}</p>
+          <p className="text-blog-gray font-light mb-1">{description}</p>
         </Link>
         <div className="flex justify-between">
-          <span className="text-blog-gray text-sm font-light">
+          <span className="text-blog-lightGray text-sm font-light">
             Read more...
           </span>
           <TagList list={tagList} />

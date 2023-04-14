@@ -7,7 +7,7 @@ export default {
         blog: {
           blue: '#1DA1F2',
           darkBlue: '#057fcb',
-          gray: '#AAB8C2',
+          gray: '#657786',
           lightGray: '#AAB8C2',
         },
       },
