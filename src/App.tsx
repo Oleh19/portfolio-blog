@@ -1,15 +1,23 @@
 import { FC } from 'react';
-import Banner from './components/Banner';
-import Feed from './components/Feed';
-import Header from './components/Header';
+import { Route, Routes } from 'react-router';
+import Layout from './components/layouts/Layout';
+import FrontPage from './pages/FrontPage';
+import Profile from './pages/Profile';
 
 const App: FC = () => {
   return (
-    <>
-      <Header />
-      <Banner />
-      <Feed />
-    </>
+    <Layout>
+      <Routes>
+        <Route
+          path="/"
+          element={<FrontPage />}
+        />
+        <Route
+          path="/:profile"
+          element={<Profile />}
+        />
+      </Routes>
+    </Layout>
   );
 };
 

@@ -1,31 +1,39 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useGetGlobalFeedQuery } from '../api/repository';
-import { PAGE_SIZE } from '../consts';
-import { serializeSearchParams } from '../utils/router';
+import { FeedData } from '../../api/repository';
+import { PAGE_SIZE } from '../../consts';
+import { serializeSearchParams } from '../../utils/router';
+import Container from '../layouts/Container';
+import Skeleton from '../Skeleton';
+
 import ArticleList from './ArticleList';
-import Container from './Container';
+
 import FeedToggle from './FeedToggle';
 import Pagination from './Pagination';
 import TagCloud from './TagCloud';
 
-const Feed: FC = () => {
+interface Props {
+  isLoading: boolean;
+  isFetching: boolean;
+  error: any;
+  data?: FeedData;
+}
+
+const Feed: FC<Props> = ({ isFetching, isLoading, error, data }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [page, setPage] = useState(
-    searchParams.get('page') ? Number(searchParams.get('page')) : 0
-  );
-  const { data, error, isLoading, isFetching } = useGetGlobalFeedQuery({
-    page: page,
-  });
+  const page = searchParams.get('page') ? Number(searchParams.get('page')) : 0;
 
   const handlePageChange = ({ selected }: { selected: number }) => {
-    setPage(selected);
     setSearchParams(serializeSearchParams({ page: String(selected) }));
     window.scrollTo(0, 0);
   };
 
   if (isLoading || isFetching) {
-    return <Container>Loading...</Container>;
+    return (
+      <Container>
+        <Skeleton />
+      </Container>
+    );
   }
 
   if (error) {

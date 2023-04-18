@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useGetPopularTagsQuery } from '../api/repository';
-import TagList from './UI/TagList';
+import { useGetPopularTagsQuery } from '../../api/repository';
+import TagList from '../UI/TagList';
 
 const TagCloud: FC = () => {
   const { data, error, isLoading, isFetching } = useGetPopularTagsQuery('');

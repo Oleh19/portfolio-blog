@@ -4,7 +4,7 @@ import { fetchApi } from '../api/repository';
 
 export const store = configureStore({
   reducer: {
-    [fetchApi.reducerPath]: fetchApi.reducer,
+    [fetchApi.reducerPath]: fetchApi.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(fetchApi.middleware),

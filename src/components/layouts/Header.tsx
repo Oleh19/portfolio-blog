@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import clsx from 'clsx';
-import Container from './Container';
+import Container from '../layouts/Container';
 
 const Header: FC = () => {
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
@@ -9,6 +9,21 @@ const Header: FC = () => {
       'text-black/30': !isActive,
       'text-black/80': isActive,
     });
+
+  const navMenu = [
+    {
+      link: '/',
+      title: 'Home',
+    },
+    {
+      link: '/sign-in',
+      title: 'Sign In',
+    },
+    {
+      link: '/sign-up',
+      title: 'Sign Up',
+    },
+  ];
 
   return (
     <header>
@@ -22,30 +37,16 @@ const Header: FC = () => {
               Blog
             </Link>
             <ul className="list-none flex">
-              <li className="ml-4">
-                <NavLink
-                  to="/"
-                  className={navLinkClasses}
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="ml-4">
-                <NavLink
-                  to="/sign-in"
-                  className={navLinkClasses}
-                >
-                  Sign In
-                </NavLink>
-              </li>
-              <li className="ml-4">
-                <NavLink
-                  to="/sign-up"
-                  className={navLinkClasses}
-                >
-                  Sign Up
-                </NavLink>
-              </li>
+              {navMenu.map((obj) => (
+                <li className="ml-4">
+                  <NavLink
+                    to={obj.link}
+                    className={navLinkClasses}
+                  >
+                    {obj.title}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
         </Container>

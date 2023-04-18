@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FeedArticle } from '../api/dto/getGlobalFeed';
+import { FeedArticle } from '../../api/dto/getGlobalFeed';
 import Article from './Article';
 
 interface Props {
