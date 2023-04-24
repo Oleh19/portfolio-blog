@@ -27,7 +27,7 @@ const Header: FC = () => {
 
   return (
     <header>
-      <nav className="px-2 py-4">
+      <nav className="px-2 pb-5">
         <Container>
           <div className="flex justify-between items-center">
             <Link

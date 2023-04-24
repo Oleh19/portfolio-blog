@@ -25,21 +25,21 @@ const Feed: FC<Props> = ({ isFetching, isLoading, error, data }) => {
 
   if (isLoading || isFetching) {
     // return <Skeleton />;
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
 
   if (error) {
     return <p>Error while loading</p>;
   }
 
-  if(data?.articlesCount === 0){
-    return <p>No articles are here</p>
+  if (data?.articlesCount === 0) {
+    return <p>No articles are here</p>;
   }
 
   return (
     <>
       <ArticleList list={data?.articles || []} />
-      <nav className="mb-7">
+      <nav className="pb-5">
         <Pagination
           amount={(data?.articlesCount || 0) / PAGE_SIZE}
           handlePageChange={handlePageChange}

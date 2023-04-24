@@ -1,9 +1,8 @@
 - React
 - TypeScript
-- Redux-toolkit
-- RTK query
+- Redux-toolkit / RTK query
 - TailwindCSS
 - Swagger
+- Framer Motion
 
-
-1. fix data in MyArticleAuthor-component
+! Not every post has comments.

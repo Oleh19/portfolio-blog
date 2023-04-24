@@ -4,10 +4,10 @@ import Header from './Header';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <>
+    <div className='py-5'>
       <Header />
       <Container>{children}</Container>
-    </>
+    </div>
   );
 };
 

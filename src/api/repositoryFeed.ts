@@ -1,6 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { PAGE_SIZE } from '../consts';
 import { baseQuery } from './baseQuery';
+import { ArticleCommentsInDto } from './dto/articlesComments';
 import { FeedArticle } from './dto/getGlobalFeed';
 import { SingleArticleInDto } from './dto/getSingleArticle';
 import { PopularTags } from './dto/PopularTags';
@@ -68,6 +69,15 @@ export const fetchApi = createApi({
         url: `/articles/${slug}`,
       }),
     }),
+
+    getCommentsArticle: builder.query<
+      ArticleCommentsInDto,
+      SingleArticleParams
+    >({
+      query: ({ slug }) => ({
+        url: `/articles/${slug}/comments`,
+      }),
+    }),
   }),
 });
 
@@ -75,5 +85,6 @@ export const {
   useGetGlobalFeedQuery,
   useGetPopularTagsQuery,
   useGetProfileFeedQuery,
-  useGetSingleArticleQuery
+  useGetSingleArticleQuery,
+  useGetCommentsArticleQuery,
 } = fetchApi;

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { FeedArticle } from '../../api/dto/getGlobalFeed';
 import MyArticleAuthor from '../UI/MyArticleAuthor';
-import MyButtonFavorite from '../UI/MyButtonFavorite';
+import MyButtonFavorite from '../UI/MyFavoriteButton';
 import TagList from '../UI/TagList';
 
 interface Props extends FeedArticle {}

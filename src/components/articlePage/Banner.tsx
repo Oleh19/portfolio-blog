@@ -12,7 +12,7 @@ interface Props {
 const Banner: FC<Props> = ({ title, author, likes, publishedAt }) => {
   return (
     <div className="pt-8 pb-4 px-5 mb-5 bg-black text-justify ">
-      <p className="text-white font-semibold text-4xl text-justify">{title}</p>
+      <p className="text-white font-semibold text-4xl text-justify  mb-8 ">{title}</p>
       <ArticleMeta
         author={author}
         likes={likes}

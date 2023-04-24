@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useGetSingleArticleQuery } from '../api/repositoryFeed';
 import ArticleMeta from '../components/articlePage/ArticleMeta';
 import Banner from '../components/articlePage/Banner';
+import CommentsList from '../components/articlePage/commentsList';
 import Container from '../components/layouts/Container';
 import TagList from '../components/UI/TagList';
 
@@ -12,7 +13,7 @@ const convertNewLines = (body: string) => {
 
 const Article: FC = () => {
   const { slug } = useParams();
-  const { data, isLoading } = useGetSingleArticleQuery({ slug: slug! });
+  const { data } = useGetSingleArticleQuery({ slug: slug! });
 
   if (!data) {
     return <h1>Article not found</h1>;
@@ -36,13 +37,14 @@ const Article: FC = () => {
           />
           <TagList list={data.article.tagList} />
         </div>
-        <div className="flex justify-center mb-5">
+        <div className="flex justify-center mt-8">
           <ArticleMeta
             author={data.article.author}
             likes={data.article.favoritesCount}
             publishedAt={data.article.createdAt}
           />
         </div>
+       <CommentsList  />
       </Container>
     </>
   );
