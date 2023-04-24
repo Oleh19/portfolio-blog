@@ -37,11 +37,15 @@ const Header: FC = () => {
               Blog
             </Link>
             <ul className="list-none flex">
-              {navMenu.map((obj) => (
-                <li className="ml-4">
+              {navMenu.map((obj, index) => (
+                <li
+                  className="ml-4"
+                  key={index}
+                >
                   <NavLink
                     to={obj.link}
                     className={navLinkClasses}
+                    end
                   >
                     {obj.title}
                   </NavLink>

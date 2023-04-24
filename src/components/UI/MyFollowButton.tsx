@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import { BiPlus } from 'react-icons/bi';
 
-const MyFollowButton: FC = () => {
+interface Props {
+  username: string;
+}
+
+const MyFollowButton: FC<Props> = ({ username }) => {
   return (
     <button
       className="text-center align-middle cursor-pointer
@@ -12,7 +16,7 @@ const MyFollowButton: FC = () => {
                 active:bg-white/30 duration-300 ease-out"
     >
       <BiPlus />
-      Follow Full Name
+      Follow {username}
     </button>
   );
 };

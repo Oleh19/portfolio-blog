@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useGetPopularTagsQuery } from '../../api/repository';
+import { useGetPopularTagsQuery } from '../../api/repositoryFeed';
 import TagList from '../UI/TagList';
 
 const TagCloud: FC = () => {
@@ -8,7 +8,7 @@ const TagCloud: FC = () => {
   if (isLoading || isFetching) {
     return (
       <div className="bg-blog-lightGray pt-1 pb-2 px-2 rounded-lg">
-        <p className="mb-2 text-white">Popular popular tags...</p>
+        <p className="mb-2 text-white">Loading popular tags...</p>
       </div>
     );
   }

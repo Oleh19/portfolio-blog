@@ -1,16 +1,12 @@
 import { FC } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { FeedData } from '../../api/repository';
+import { FeedData } from '../../api/repositoryFeed';
 import { PAGE_SIZE } from '../../consts';
-import { serializeSearchParams } from '../../utils/router';
-import Container from '../layouts/Container';
+import { usePageParams } from '../../hooks/usePageParams';
 import Skeleton from '../Skeleton';
 
 import ArticleList from './ArticleList';
 
-import FeedToggle from './FeedToggle';
 import Pagination from './Pagination';
-import TagCloud from './TagCloud';
 
 interface Props {
   isLoading: boolean;
@@ -20,35 +16,29 @@ interface Props {
 }
 
 const Feed: FC<Props> = ({ isFetching, isLoading, error, data }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const page = searchParams.get('page') ? Number(searchParams.get('page')) : 0;
+  const { setPage, page } = usePageParams();
 
   const handlePageChange = ({ selected }: { selected: number }) => {
-    setSearchParams(serializeSearchParams({ page: String(selected) }));
+    setPage(selected);
     window.scrollTo(0, 0);
   };
 
   if (isLoading || isFetching) {
-    return (
-      <Container>
-        <Skeleton />
-      </Container>
-    );
+    // return <Skeleton />;
+    return <p>Loading...</p>
   }
 
   if (error) {
-    return <Container>Error while loading</Container>;
+    return <p>Error while loading</p>;
+  }
+
+  if(data?.articlesCount === 0){
+    return <p>No articles are here</p>
   }
 
   return (
-    <Container>
-      <FeedToggle />
-      <div className="flex">
-        <ArticleList list={data?.articles || []} />
-        <div className="pl-3 w-1/4">
-          <TagCloud />
-        </div>
-      </div>
+    <>
+      <ArticleList list={data?.articles || []} />
       <nav className="mb-7">
         <Pagination
           amount={(data?.articlesCount || 0) / PAGE_SIZE}
@@ -56,7 +46,7 @@ const Feed: FC<Props> = ({ isFetching, isLoading, error, data }) => {
           page={page}
         />
       </nav>
-    </Container>
+    </>
   );
 };
 

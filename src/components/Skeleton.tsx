@@ -20,23 +20,19 @@ const SKeleton = (props:any) => (
     <rect x="51" y="85" rx="5" ry="5" width="201" height="20" /> 
     <rect x="0" y="120" rx="5" ry="5" width="1000" height="64" /> 
     <rect x="0" y="190" rx="5" ry="5" width="1000" height="72" /> 
-    <rect x="1015" y="40" rx="5" ry="5" width="244" height="174" /> 
-    <rect x="938" y="65" rx="5" ry="5" width="60" height="30" /> 
-    <rect x="497" y="270" rx="5" ry="5" width="64" height="22" />
-    <rect x="566" y="270" rx="5" ry="5" width="64" height="22" />
-    <rect x="635" y="270" rx="5" ry="5" width="64" height="22" />
-    <rect x="919" y="270" rx="5" ry="5" width="80" height="30" />
+    {/* <rect x="1015" y="40" rx="5" ry="5" width="244" height="174" />  */}
+    <rect x="938" y="75" rx="5" ry="5" width="60" height="30" /> 
+    <rect x="727" y="270" rx="5" ry="5" width="64" height="22" />
+    <rect x="796" y="270" rx="5" ry="5" width="64" height="22" />
+    <rect x="865" y="270" rx="5" ry="5" width="64" height="22" />
+    <rect x="934" y="270" rx="5" ry="5" width="64" height="22" />
 
     <circle cx="20" cy="340" r="21" /> 
     <rect x="51" y="320" rx="5" ry="5" width="201" height="20" /> 
     <rect x="51" y="345" rx="5" ry="5" width="201" height="20" /> 
-    <rect x="0" y="380" rx="5" ry="5" width="768" height="64" /> 
-    <rect x="0" y="450" rx="5" ry="5" width="768" height="72" /> 
-    <rect x="708" y="320" rx="5" ry="5" width="60" height="30" /> 
-    <rect x="497" y="570" rx="5" ry="5" width="64" height="22" />
-    <rect x="566" y="570" rx="5" ry="5" width="64" height="22" />
-    <rect x="635" y="570" rx="5" ry="5" width="64" height="22" />
-    <rect x="704" y="570" rx="5" ry="5" width="64" height="22" />
+    <rect x="0" y="380" rx="5" ry="5" width="1000" height="64" /> 
+    <rect x="0" y="450" rx="5" ry="5" width="1000" height="72" /> 
+    <rect x="938" y="330" rx="5" ry="5" width="60" height="30" /> 
   </ContentLoader>
     </div>
     </div>
