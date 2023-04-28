@@ -6,12 +6,12 @@ import { Author } from '../../api/dto/getGlobalFeed';
 
 interface Props {
   author: Author;
-  publishedAt: string;
+  createdAt: string;
 }
 
 const MyArticleAuthor: FC<Props> = ({
   author,
-  publishedAt,
+  createdAt,
 }) => {
   return (
     <div className="flex items-center">
@@ -28,12 +28,12 @@ const MyArticleAuthor: FC<Props> = ({
       <div className="mr-6 ml-1 leading-4 inline-flex flex-col">
         <Link
           to={`/${encodeURIComponent(author.username)}`}
-          className="font-medium"
+          className="font-medium pb-1"
         >
           {author.username}
         </Link>
         <span className="text-blog-gray text-base">
-          {DateTime.fromISO(publishedAt).toLocaleString(DateTime.DATE_FULL)}
+          {DateTime.fromISO(createdAt).toLocaleString(DateTime.DATE_FULL)}
         </span>
       </div>
     </div>

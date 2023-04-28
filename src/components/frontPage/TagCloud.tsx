@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useGetPopularTagsQuery } from '../../api/repositoryFeed';
+import { useGetPopularTagsQuery } from '../../api/repository/repositoryFeed';
 import TagList from '../UI/TagList';
 
 const TagCloud: FC = () => {

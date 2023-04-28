@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useGetCommentsArticleQuery } from '../../api/repositoryFeed';
+import { useGetCommentsArticleQuery } from '../../api/repository/repositoryFeed';
 import CommentItem from './CommentItem';
 interface Props {}
 

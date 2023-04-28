@@ -1,4 +1,4 @@
-export interface ArticleCommentsInDto {
+export interface ArticleCommentsInDTO {
   comments: Comment[];
 }
 

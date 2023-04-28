@@ -10,7 +10,7 @@ interface Props {
 const Pagination: FC<Props> = ({ amount, handlePageChange, page }) => {
   return (
     <ReactPaginate
-      pageCount={Math.ceil(amount)}
+      pageCount={amount}
       previousLabel={null}
       nextLabel={null}
       containerClassName="flex"

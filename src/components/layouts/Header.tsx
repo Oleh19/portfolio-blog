@@ -2,28 +2,16 @@ import { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import Container from '../layouts/Container';
+import { useAuth } from '../../hooks/useAuth';
 
 const Header: FC = () => {
+  const { isLoggedIn, logOut } = useAuth();
+
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
     clsx('py-navItem', {
       'text-black/30': !isActive,
       'text-black/80': isActive,
     });
-
-  const navMenu = [
-    {
-      link: '/',
-      title: 'Home',
-    },
-    {
-      link: '/sign-in',
-      title: 'Sign In',
-    },
-    {
-      link: '/sign-up',
-      title: 'Sign Up',
-    },
-  ];
 
   return (
     <header>
@@ -37,20 +25,48 @@ const Header: FC = () => {
               Blog
             </Link>
             <ul className="list-none flex">
-              {navMenu.map((obj, index) => (
-                <li
-                  className="ml-4"
-                  key={index}
+              <li className="ml-4">
+                <NavLink
+                  to="/"
+                  className={navLinkClasses}
+                  end
                 >
+                  Home
+                </NavLink>
+              </li>
+              {isLoggedIn ? (
+                <li className="ml-4">
                   <NavLink
-                    to={obj.link}
+                    to="/"
+                    onClick={logOut}
                     className={navLinkClasses}
                     end
                   >
-                    {obj.title}
+                    Log Out
                   </NavLink>
                 </li>
-              ))}
+              ) : (
+                <>
+                  <li className="ml-4">
+                    <NavLink
+                      to="/sign-up"
+                      className={navLinkClasses}
+                      end
+                    >
+                      Sign Up
+                    </NavLink>
+                  </li>
+                  <li className="ml-4">
+                    <NavLink
+                      to="/sign-in"
+                      className={navLinkClasses}
+                      end
+                    >
+                      Sign In
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </Container>

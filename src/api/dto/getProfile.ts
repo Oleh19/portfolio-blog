@@ -1,4 +1,4 @@
-export interface GetProfileInDto {
+export interface GetProfileInDTO {
   profile: Profile;
 }
 

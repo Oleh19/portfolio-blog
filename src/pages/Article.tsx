@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useParams } from 'react-router';
-import { useGetSingleArticleQuery } from '../api/repositoryFeed';
+import { useGetSingleArticleQuery } from '../api/repository/repositoryFeed';
 import ArticleMeta from '../components/articlePage/ArticleMeta';
 import Banner from '../components/articlePage/Banner';
-import CommentsList from '../components/articlePage/commentsList';
+import CommentsList from '../components/articlePage/CommentsList';
 import Container from '../components/layouts/Container';
 import TagList from '../components/UI/TagList';
 
@@ -44,7 +44,7 @@ const Article: FC = () => {
             publishedAt={data.article.createdAt}
           />
         </div>
-       <CommentsList  />
+        <CommentsList />
       </Container>
     </>
   );

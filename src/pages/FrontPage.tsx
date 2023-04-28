@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useGetGlobalFeedQuery } from '../api/repositoryFeed';
+import { useGetGlobalFeedQuery } from '../api/repository/repositoryFeed';
 import Banner from '../components/frontPage/Banner';
 import Feed from '../components/frontPage/Feed';
 import FeedToggle from '../components/frontPage/FeedToggle';

@@ -5,4 +5,5 @@
 - Swagger
 - Framer Motion
 
+! No adaptation YET
 ! Not every post has comments.

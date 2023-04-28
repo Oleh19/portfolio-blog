@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { useGetProfileFeedQuery } from '../api/repositoryFeed';
-import { useGetProfileQuery } from '../api/repositoryProfile';
+import { useGetProfileFeedQuery } from '../api/repository/repositoryFeed';
+import { useGetProfileQuery } from '../api/repository/repositoryProfile';
 import Feed from '../components/frontPage/Feed';
 import FeedToggle from '../components/frontPage/FeedToggle';
 import Banner from '../components/profilePage/Banner';

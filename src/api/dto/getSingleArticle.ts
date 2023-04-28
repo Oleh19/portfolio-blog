@@ -1,4 +1,4 @@
-export interface SingleArticleInDto {
+export interface SingleArticleInDTO {
     article: Article
 }
 

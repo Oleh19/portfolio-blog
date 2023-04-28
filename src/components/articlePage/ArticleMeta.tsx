@@ -16,7 +16,7 @@ const ArticleMeta: FC<Props> = ({ author, likes, publishedAt }) => {
       <div className="inline-block">
         <MyArticleAuthor
           author={author}
-          publishedAt={publishedAt}
+          createdAt={publishedAt}
         />
       </div>
 

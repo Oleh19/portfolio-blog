@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FeedData } from '../../api/repositoryFeed';
+import { FeedData } from '../../api/repository/repositoryFeed';
 import { PAGE_SIZE } from '../../consts';
 import { usePageParams } from '../../hooks/usePageParams';
 import Skeleton from '../Skeleton';
@@ -41,7 +41,7 @@ const Feed: FC<Props> = ({ isFetching, isLoading, error, data }) => {
       <ArticleList list={data?.articles || []} />
       <nav className="pb-5">
         <Pagination
-          amount={(data?.articlesCount || 0) / PAGE_SIZE}
+          amount={Math.ceil((data?.articlesCount || 0) / PAGE_SIZE)}
           handlePageChange={handlePageChange}
           page={page}
         />

@@ -1,6 +1,6 @@
-import type { BaseQueryFn } from '@reduxjs/toolkit/query'
-import axios from 'axios'
-import type { AxiosRequestConfig, AxiosError } from 'axios'
+import type { BaseQueryFn } from '@reduxjs/toolkit/query';
+import axios from 'axios';
+import type { AxiosRequestConfig, AxiosError } from 'axios';
 
 export const axiosBaseQuery =
   (
@@ -15,7 +15,7 @@ export const axiosBaseQuery =
     unknown,
     unknown
   > =>
-  async ({ url, method, data, params }) => {
+  async ({ url, method = 'get', data, params }) => {
     try {
       const result = await axios({ url: baseUrl + url, method, data, params });
       return { data: result.data };

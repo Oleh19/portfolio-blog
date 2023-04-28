@@ -1,11 +1,11 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import { PAGE_SIZE } from '../consts';
-import { baseQuery } from './baseQuery';
-import { ArticleCommentsInDto } from './dto/articlesComments';
-import { FeedArticle } from './dto/getGlobalFeed';
-import { SingleArticleInDto } from './dto/getSingleArticle';
-import { PopularTags } from './dto/PopularTags';
-import { transformResponse } from './utils';
+import { PAGE_SIZE } from '../../consts';
+import { baseQuery } from '../baseQuery';
+import { ArticleCommentsInDTO } from '../dto/getArticlesComments';
+import { FeedArticle } from '../dto/getGlobalFeed';
+import { SingleArticleInDTO } from '../dto/getSingleArticle';
+import { PopularTags } from '../dto/PopularTags';
+import { transformResponse } from '../utils';
 
 interface BaseFeedParams {
   page: number;
@@ -64,14 +64,14 @@ export const fetchApi = createApi({
       }),
     }),
 
-    getSingleArticle: builder.query<SingleArticleInDto, SingleArticleParams>({
+    getSingleArticle: builder.query<SingleArticleInDTO, SingleArticleParams>({
       query: ({ slug }) => ({
         url: `/articles/${slug}`,
       }),
     }),
 
     getCommentsArticle: builder.query<
-      ArticleCommentsInDto,
+      ArticleCommentsInDTO,
       SingleArticleParams
     >({
       query: ({ slug }) => ({
