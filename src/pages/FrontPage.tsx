@@ -6,6 +6,7 @@ import Feed from '../components/frontPage/Feed';
 import FeedToggle from '../components/frontPage/FeedToggle';
 import TagCloud from '../components/frontPage/TagCloud';
 import Container from '../components/layouts/Container';
+import { useAuth } from '../hooks/useAuth';
 import { usePageParams } from '../hooks/usePageParams';
 
 const FrontPage: FC = () => {
@@ -17,9 +18,11 @@ const FrontPage: FC = () => {
     tag: searchParams.get('tag'),
   });
 
+  const { isLoggedIn } = useAuth();
+
   return (
     <>
-      <Banner />
+      {!isLoggedIn && <Banner />}
       <Container>
         <FeedToggle />
         <div className="flex">
